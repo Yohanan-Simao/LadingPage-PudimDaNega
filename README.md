@@ -1,1 +1,1 @@
-Esse "projeto" é para um landing page, para colegas que vendem pudins
+Esse "projeto" é de um landing page, para colegas que vendem pudins
