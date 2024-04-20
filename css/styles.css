@@ -5,12 +5,12 @@
   --primary: #ff608c;
   --secondary: #fda4af;
   --s70: rgba(249, 170, 176, 0.7);
+  --p75: rgba(255, 96, 141, 0.75);
   --back: rgba(119, 86, 85, 0.5);
   /* Fonts */
   --spicy: "Spicy Rice", serif;
   --kings: "Kings", cursive;
   --dancing: "Dancing Script", cursive;
-  font-size: 16px;
 }
 
 * {
@@ -18,22 +18,28 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
-body {
+body{
   background-color: black;
   background: url("/assets/Pudim-background2.jpg") no-repeat;
   background-size: cover;
+  background-position-y: -30rem;
 }
 
-/* Header and Navegation */
+/** Header and Navigation */
 .header-container {
   background-color: white;
   height: 8.12rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 2px 60px white;
 }
+
+
 
 .nav-div {
   display: flex;
@@ -43,7 +49,7 @@ body {
   gap: 1.87rem;
 }
 
-.nav-div img {
+.header-logo {
   width: 12rem;
   height: 12rem;
 }
@@ -58,7 +64,7 @@ body {
   text-shadow: 1px 1px 2px white;
 }
 
-.nav-div a:hover {
+.nav-div hr + a:hover {
   color: white;
   text-shadow: 1px 1px 2px var(--secondary);
   background-color: var(--primary);
@@ -70,19 +76,22 @@ body {
   box-shadow: 1px 1px 2px var(--primary);
 }
 
-/* Main section */
-main {
+/** Main section */
+.main-container {
   display: flex;
+  height: 80vw;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 5.75rem;
+  position: relative;
 }
 
 .first-main-div {
   background-color: var(--back);
   width: 80rem;
   height: 7.5rem;
+  position: absolute;
+  top: 5.62rem;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -105,15 +114,20 @@ main {
 .first-main-div span {
   color: var(--primary);
   font-weight: bold;
+  font-size: 3rem;
   text-shadow: 0 1px 2px white;
 }
 
-/* Main Catalog */
+/** Main Catalog */
+
+#div-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .catalog {
   display: flex;
-  position: relative;
-  top: 15.31rem;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -122,15 +136,128 @@ main {
   box-shadow: inset 0 0.25rem 0.62rem white;
   border-radius: 6.87rem 0;
   background-color: var(--s70);
+  position: absolute;
+  top: 28.43rem;
 }
 
 .catalog h1 {
   position: absolute;
-  bottom: 0.87rem;
+  bottom: .81rem;
   font-size: 6rem;
   font-family: var(--kings);
   font-weight: normal;
   color: var(--primary);
   text-shadow: 2px 2px 2px white;
   text-transform: uppercase;
+}
+
+.list-format{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14.75rem;
+  height: 12.18rem;
+  border-radius: 1.25rem;
+  color: white;
+  background-color: var(--p75);
+  box-shadow: 4px 4px 10px white;
+}
+
+.catalog-list{
+  position: absolute;
+  top: 7rem;
+  right: 31.43rem;
+}
+
+.catalog-list2{
+  position: absolute;
+  top: 7rem;
+  left: 31.43rem;
+}
+
+.catalog-list h3, .catalog-list2 h3 {
+  position: absolute;
+  top: 0;
+  font-size: 2.06rem;
+  font-weight: normal;
+  font-family: var(--spicy);
+  text-align: center;
+  text-shadow: 2px 2px 2px var(--secondary);
+}
+
+.catalog-list2 .span-format{
+  font-size: 1.75rem;
+}
+
+.catalog-list span, .catalog-list2 span {
+  position: relative;
+  font-size: 2.06rem;
+  top: .62rem;
+  color: black;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px white;
+}
+
+.catalog-list span + span, .catalog-list2 span + span{
+  color: white;
+  font-size: 2.06rem;
+  position: relative;
+  top: .31rem;
+  text-shadow: 1px 1px 2px black;
+}
+
+/** Footer */
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Functions JS */
+#up {
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+.activated-up {
+  opacity: 1 !important;
+  position: sticky;
+  bottom: 1rem;
+  padding-right: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  color: var(--primary);
+  filter: drop-shadow(0 1px 2px white);
+}
+
+#catalog-show {
+  opacity: 0;
+  transition: all .6s ease-in;
+}
+
+.catalog-active-up {
+  opacity: 1 !important;
+}
+
+#catalog-icon svg{
+  width: 10rem;
+  height: 10rem;
+}
+
+#catalog-icon {
+  color: var(--secondary);
+  filter: drop-shadow(0 4px 4px var(--primary));
+  position: sticky;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  top: 35rem;
+  transition: all 1s ease-out;
+}
+
+.catalog-icon {
+  opacity: 0 !important;
 }

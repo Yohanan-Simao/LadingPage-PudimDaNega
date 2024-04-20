@@ -4,39 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/styles.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/script.js"></script>
     <title>Pudim da Nega</title>
   </head>
   <body>
-    <section>
+    <section class="section-header" id="start">
       <header class="header-container">
         <nav class="nav-container">
           <div class="nav-div">
-            <img src="/assets/Logo_sem_fundo.svg" alt="Logo sem fundo" />
+            <img
+              class="header-logo"
+              src="/assets/Logo_sem_fundo.svg"
+              alt="Logo sem fundo"
+            />
             <hr class="side-lines" />
-            <a href="/">Inicio</a>
+            <a href="#start">Inicio</a>
             <hr class="side-lines" />
-            <a href="/">Catálogo</a>
+            <a href="#catalog">Catálogo</a>
             <hr class="side-lines" />
-            <a href="/">Contato</a>
+            <a href="#contact">Contato</a>
           </div>
         </nav>
       </header>
     </section>
     <section>
-      <main>
+      <main class="main-container">
         <div class="first-main-div">
           <h2>
             Transforme Momentos Simples em Experiências
             <span>Inesquecíveis</span>
           </h2>
         </div>
-        <div class="catalog">
-          <h1>Catálogo</h1>
+        <div id="div-icon">
+          <a id="catalog-icon" href="#catalog">
+            <i data-lucide="arrow-down-to-line"></i>
+          </a>
+        </div>
+        <div id="catalog-show" class="catalog">
+          <h1 id="catalog">Catálogo</h1>
+          <div class="catalog-list list-format">
+            <h3>
+              Sabores Tradicionais <span>Mini Pudim</span> <span>R$7.00</span>
+            </h3>
+          </div>
+          <div class="catalog-list2 list-format">
+            <h3>
+              Sabores Tradicionais
+              <span class="span-format">Pudim Médio 20cm</span>
+              <span>R$7.00</span>
+            </h3>
+          </div>
         </div>
       </main>
     </section>
     <section>
-      <footer></footer>
+      <footer id="contact"></footer>
     </section>
+    <a id="up" href="#start">
+      <i id="icon" data-lucide="circle-chevron-up"></i>
+    </a>
+    <script>
+      lucide.createIcons();
+    </script>
   </body>
 </html>
