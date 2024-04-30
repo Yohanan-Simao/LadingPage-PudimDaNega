@@ -18,15 +18,14 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1rem;
   scroll-behavior: smooth;
 }
 
-body{
-  background-color: black;
+body, html{
+  height: 100vh;
   background: url("/assets/Pudim-background2.jpg") no-repeat;
   background-size: cover;
-  background-position-y: -30rem;
 }
 
 /** Header and Navigation */
@@ -39,8 +38,6 @@ body{
   box-shadow: 0 2px 60px white;
 }
 
-
-
 .nav-div {
   display: flex;
   justify-content: center;
@@ -51,7 +48,7 @@ body{
 
 .header-logo {
   width: 12rem;
-  height: 12rem;
+  height: 8.12rem;
 }
 
 .nav-div a {
@@ -78,24 +75,22 @@ body{
 
 /** Main section */
 .main-container {
+  flex: 1;
   display: flex;
-  height: 80vw;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.87rem;
 }
 
 .first-main-div {
   background-color: var(--back);
   width: 80rem;
   height: 7.5rem;
-  position: absolute;
-  top: 5.62rem;
+  margin: 5.62rem auto;
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: center;
   border-radius: 7.5rem 7.5rem 0 0;
   overflow: hidden;
   box-shadow: inset 0 0.25rem 0.62rem white;
@@ -105,43 +100,69 @@ body{
   font-family: var(--dancing);
   color: white;
   text-shadow: 0px 1px 2px var(--primary);
+  font-size: 1.3rem;
+  font-weight: normal;
+  width: 57.5rem;
+  padding: 2rem;
+}
+
+.link-wpp {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.9rem;
+  text-shadow: 0 1px 2px white;
+}
+.last-main-div {
+  background-color: var(--back);
+  width: 80rem;
+  height: 7.5rem;
+  margin: 5.62rem auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 7.5rem 7.5rem;
+  overflow: hidden;
+  box-shadow: inset 0 0.25rem 0.62rem white;
+}
+
+.last-main-div h2 {
+  font-family: var(--dancing);
+  color: white;
+  text-shadow: 0px 1px 2px var(--primary);
   font-size: 3rem;
   font-weight: normal;
   width: 57.5rem;
-  height: 7.25rem;
 }
 
-.first-main-div span {
+.last-main-div span {
   color: var(--primary);
   font-weight: bold;
   font-size: 3rem;
   text-shadow: 0 1px 2px white;
 }
 
+
 /** Main Catalog */
 
 #div-icon {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .catalog {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 36.93rem;
-  height: 5.12rem;
   box-shadow: inset 0 0.25rem 0.62rem white;
   border-radius: 6.87rem 0;
   background-color: var(--s70);
-  position: absolute;
   top: 28.43rem;
+  margin: 4rem auto;
 }
 
 .catalog h1 {
-  position: absolute;
+  margin: -4.2rem auto 0 auto;
   bottom: .81rem;
   font-size: 6rem;
   font-family: var(--kings);
@@ -151,33 +172,28 @@ body{
   text-transform: uppercase;
 }
 
-.list-format{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.catalog-list, .catalog-list2 {
   width: 14.75rem;
   height: 12.18rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-format{
+  display: flex;
+  justify-content: space-around;
+  width: 95vw;
+}
+
+.catalog-list h3, .catalog-list2 h3, .catalog-list3 h3{
+  width: 14.75rem;
+  height: 12.18rem;
+  margin: 0.5rem;
   border-radius: 1.25rem;
   color: white;
   background-color: var(--p75);
   box-shadow: 4px 4px 10px white;
-}
-
-.catalog-list{
-  position: absolute;
-  top: 7rem;
-  right: 31.43rem;
-}
-
-.catalog-list2{
-  position: absolute;
-  top: 7rem;
-  left: 31.43rem;
-}
-
-.catalog-list h3, .catalog-list2 h3 {
-  position: absolute;
-  top: 0;
   font-size: 2.06rem;
   font-weight: normal;
   font-family: var(--spicy);
@@ -185,36 +201,159 @@ body{
   text-shadow: 2px 2px 2px var(--secondary);
 }
 
-.catalog-list2 .span-format{
-  font-size: 1.75rem;
-}
 
-.catalog-list span, .catalog-list2 span {
-  position: relative;
-  font-size: 2.06rem;
-  top: .62rem;
+.catalog-list span, .catalog-list2 span, .catalog-list3 span {
   color: black;
+  font-size: 2.06rem;
   text-transform: uppercase;
   text-shadow: 1px 1px 2px white;
 }
 
-.catalog-list span + span, .catalog-list2 span + span{
+.catalog-list span + span, .catalog-list2 span + span, .catalog-list3 span + span{
   color: white;
-  font-size: 2.06rem;
-  position: relative;
-  top: .31rem;
   text-shadow: 1px 1px 2px black;
 }
 
+.catalog-list2 .span-format, .catalog-list3 .span-format{
+  font-size: 1.75rem;
+  text-wrap: nowrap;
+}
+
+/** Catalog Image */
+
+.pudding-img{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 95vw;
+}
+
+.special-pudding-img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.img-pudding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-pudding img{
+  background-color: var(--s70);
+  border-radius: 1.25rem;
+  filter: drop-shadow(2px 2px 4px black);
+}
+
+.img-text {
+  font-size: .81rem;
+  color: white;
+  border-radius: 1.25rem;
+  text-shadow: 0px 2px 2px var(--primary);
+  filter: drop-shadow(2px 2px 4px black);
+  background-color: var(--s70);
+  font-family: var(--spicy);
+  text-wrap: nowrap;
+  font-weight: normal;
+  margin: .5rem auto;
+  padding: 0 .5rem 0 .5rem;
+}
+
+#catalog-line {
+  height: 18.18rem;
+  border: 1px solid var(--secondary);
+  box-shadow: 1px 1px 2px var(--primary);
+}
 /** Footer */
 
-footer{
+footer {
+  background-color: var(--s70);
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  margin-top: auto;
+  opacity: 70%;
+  height: 10rem;
+  position: relative;
 }
 
+#side-line-footer {
+  height: 10rem;
+  border: 1px solid var(--primary);
+  box-shadow: 1px 1px 2px white;
+}
+
+/** Instagram */
+
+#instagram{
+  position: absolute;
+  left: 20rem;
+  top: 4.5rem;
+}
+
+#link-instagram {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#side-line-instagram{
+  border: 1px solid var(--primary);
+  box-shadow: 1px 1px 2px white;
+  margin-top: .2rem;
+}
+
+
+#instagram-icon{
+  color: white;
+  background: rgb(249,206,52);
+  background: linear-gradient(140deg, rgba(249,206,52,1) 0%, rgba(238,42,123,1) 50%, rgba(98,40,215,1) 100%);
+  border-radius: .3rem;
+  padding: .1rem;
+  margin: .2rem;
+}
+
+#link-instagram:hover {
+  color: white;
+  text-shadow: 1px 1px 2px var(--primary);
+}
+
+/** WhatsApp */
+#whatsapp{
+  position: absolute;
+  top: 4.5rem;
+  right: 20rem;
+}
+
+#link-whatsapp{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+  color: black;
+}
+
+
+#side-line-whatsapp {
+  border: 1px solid var(--primary);
+  box-shadow: 1px 1px 2px white;
+  margin-top: .2rem;
+}
+
+#whatsapp-icon{
+  margin: .2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+#link-whatsapp:hover {
+  color: white;
+  text-shadow: 1px 1px 2px var(--primary);
+}
 /* Functions JS */
 #up {
   opacity: 0;
@@ -224,18 +363,34 @@ footer{
 .activated-up {
   opacity: 1 !important;
   position: sticky;
-  bottom: 1rem;
-  padding-right: 2rem;
-  display: flex;
-  justify-content: flex-end;
+  align-self: flex-end;
+  bottom: 0;
   color: var(--primary);
   filter: drop-shadow(0 1px 2px white);
+  padding-right: 2rem;
 }
 
 #catalog-show {
   opacity: 0;
   transition: all .6s ease-in;
 }
+#catalog-show2 {
+  opacity: 0;
+  transition: all .6s ease-in;
+}
+#catalog-show3 {
+  opacity: 0;
+  transition: all .6s ease-in;
+}
+#catalog-show4 {
+  opacity: 0;
+  transition: all .6s ease-in;
+}
+#catalog-show5 {
+  opacity: 0;
+  transition: all .6s ease-in;
+}
+
 
 .catalog-active-up {
   opacity: 1 !important;
@@ -250,11 +405,10 @@ footer{
   color: var(--secondary);
   filter: drop-shadow(0 4px 4px var(--primary));
   position: sticky;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-content: center;
-  top: 35rem;
+  margin-top: 2rem;
   transition: all 1s ease-out;
 }
 
